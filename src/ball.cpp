@@ -1,10 +1,10 @@
 #include "ball.h"
 #include <raylib.h>
 
-Ball::Ball()
+Ball::Ball(int scrWidth, int scrHeight)
 {
-    x = 100;
-    y = 100;
+    x = scrWidth;
+    y = scrHeight;
     speedX = 5;
     speedY = 5;
     radius = 15;
