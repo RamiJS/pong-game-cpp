@@ -1,6 +1,7 @@
 #include <iostream>
 #include <raylib.h>
 #include "ball.h"
+#include "paddle.h"
 
 using namespace std;
 
@@ -14,7 +15,9 @@ int main()
     SetTargetFPS(60);
 
     // call ball constructor
-    Ball ball(scrWidth / 2, scrHeight / 2);
+    Ball ball(scrWidth, scrHeight);
+
+    Paddle paddle;
 
     while (!WindowShouldClose())
     {
@@ -23,6 +26,9 @@ int main()
 
         ball.Draw();
         ball.Update();
+
+        paddle.Draw();
+        paddle.Update();
 
         EndDrawing();
     }

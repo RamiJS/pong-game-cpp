@@ -3,7 +3,7 @@
 class Ball
 {
 public:
-    Ball(int ww, int hh);
+    Ball(int scrWidth, int scrHeight);
     void Update();
     void Draw();
 

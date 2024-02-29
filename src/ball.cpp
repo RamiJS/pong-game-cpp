@@ -3,8 +3,8 @@
 
 Ball::Ball(int scrWidth, int scrHeight)
 {
-    x = scrWidth;
-    y = scrHeight;
+    x = scrWidth / 2;
+    y = scrHeight / 2;
     speedX = 5;
     speedY = 5;
     radius = 15;
