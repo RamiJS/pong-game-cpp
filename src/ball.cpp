@@ -27,11 +27,20 @@ void Ball::Draw()
     DrawCircle(x, y, radius, WHITE);
 }
 
-int Ball::getBallX()
+float Ball::getBallX()
 {
     return x;
 }
-int Ball::getBallY()
+float Ball::getBallY()
 {
     return y;
 }
+float Ball::getBallRadius()
+{
+    return radius;
+}
+
+void Ball::UpdateSpeedX()
+{
+    speedX *= -1;
+};

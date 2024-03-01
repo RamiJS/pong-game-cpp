@@ -26,6 +26,15 @@ int main()
     {
         BeginDrawing();
         ClearBackground(BLACK);
+        if (CheckCollisionCircleRec(Vector2{ball.getBallX(), ball.getBallY()}, ball.getBallRadius(), Rectangle{paddle.getPosX(), paddle.getPosY(), paddle.getWidth(), paddle.getHeight()}))
+        {
+            ball.UpdateSpeedX();
+        };
+
+        if (CheckCollisionCircleRec(Vector2{ball.getBallX(), ball.getBallY()}, ball.getBallRadius(), Rectangle{ai.getPosX(), ai.getPosY(), ai.getWidth(), ai.getHeight()}))
+        {
+            ball.UpdateSpeedX();
+        };
 
         ball.Draw();
         ball.Update();

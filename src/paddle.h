@@ -4,13 +4,17 @@ public:
     Paddle();
     void Update();
     void Draw();
+    float getPosX() { return posX; }
+    float getPosY() { return posY; }
+    float getWidth() { return width; }
+    float getHeight() { return height; }
 
 protected:
-    int posX;
-    int posY;
+    float posX;
+    float posY;
     int speedX;
     int speedY;
-    int width;
-    int height;
+    float width;
+    float height;
     ;
 };

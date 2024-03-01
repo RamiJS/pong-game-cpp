@@ -4,13 +4,15 @@ public:
     Ball(int scrWidth, int scrHeight);
     void Update();
     void Draw();
-    int getBallX();
-    int getBallY();
+    float getBallX();
+    float getBallY();
+    float getBallRadius();
+    void UpdateSpeedX();
 
 private:
-    int x;
-    int y;
+    float x;
+    float y;
     int speedX;
     int speedY;
-    int radius;
+    float radius;
 };

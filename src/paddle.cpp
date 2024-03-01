@@ -9,9 +9,6 @@ Paddle::Paddle()
     posX = 10;
     posY = (GetScreenHeight() / 2) - (height / 2);
 
-    // enemyX = GetScreenWidth() - width - 10;
-    // enemyY = (GetScreenHeight() / 2) - (height / 2);
-
     speedX = 10;
     speedY = 10;
 };
@@ -29,5 +26,4 @@ void Paddle::Update()
 void Paddle::Draw()
 {
     DrawRectangle(posX, posY, width, height, RED);
-    // DrawRectangle(enemyX, enemyY, width, height, RED);
 };
