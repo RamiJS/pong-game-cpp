@@ -3,6 +3,7 @@
 #include "ball.h"
 #include "paddle.h"
 #include "ai.h"
+#include "score.h"
 
 using namespace std;
 
@@ -22,10 +23,16 @@ int main()
 
     Ai ai;
 
+    Score score;
+
     while (!WindowShouldClose())
     {
         BeginDrawing();
         ClearBackground(BLACK);
+
+        DrawText(TextFormat("%i", score.getPlayerScore()), GetScreenWidth() / 4, 20, 42, WHITE);
+        DrawText(TextFormat("%i", score.getAiScore()), (GetScreenWidth() / 4) * 3, 20, 42, WHITE);
+
         if (CheckCollisionCircleRec(Vector2{ball.getBallX(), ball.getBallY()}, ball.getBallRadius(), Rectangle{paddle.getPosX(), paddle.getPosY(), paddle.getWidth(), paddle.getHeight()}))
         {
             ball.UpdateSpeedX();
@@ -44,6 +51,17 @@ int main()
 
         ai.Draw();
         ai.Update(ball.getBallX(), ball.getBallY());
+
+        if (ball.getBallX() - ball.getBallRadius() <= 0)
+        {
+            score.UpdateAiScore();
+            ball.ResetBall(scrWidth, scrHeight);
+        }
+        if (ball.getBallX() + ball.getBallRadius() >= GetScreenWidth())
+        {
+            score.UpdatePlayerScore();
+            ball.ResetBall(scrWidth, scrHeight);
+        }
 
         EndDrawing();
     }

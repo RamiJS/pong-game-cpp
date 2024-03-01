@@ -1,5 +1,6 @@
 #include "ball.h"
 #include <raylib.h>
+#include <iostream>
 
 Ball::Ball(int scrWidth, int scrHeight)
 {
@@ -44,3 +45,16 @@ void Ball::UpdateSpeedX()
 {
     speedX *= -1;
 };
+
+void Ball::ResetBall(int scrWidth, int scrHeight)
+{
+    x = GetScreenWidth() / 2;
+    y = GetScreenHeight() / 2;
+
+    int random[2] = {-1, 1};
+    speedX *= random[GetRandomValue(0, 1)];
+    speedY *= random[GetRandomValue(0, 1)];
+
+    std::cout << random[GetRandomValue(0, 1)];
+    std::cout << speedX;
+}

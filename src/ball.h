@@ -8,6 +8,7 @@ public:
     float getBallY();
     float getBallRadius();
     void UpdateSpeedX();
+    void ResetBall(int scrWidth, int scrHeight);
 
 private:
     float x;
