@@ -2,6 +2,7 @@
 #include <raylib.h>
 #include "ball.h"
 #include "paddle.h"
+#include "ai.h"
 
 using namespace std;
 
@@ -19,6 +20,8 @@ int main()
 
     Paddle paddle;
 
+    Ai ai;
+
     while (!WindowShouldClose())
     {
         BeginDrawing();
@@ -29,6 +32,9 @@ int main()
 
         paddle.Draw();
         paddle.Update();
+
+        ai.Draw();
+        ai.Update(ball.getBallX(), ball.getBallY());
 
         EndDrawing();
     }

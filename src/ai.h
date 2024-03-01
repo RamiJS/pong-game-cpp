@@ -1,11 +1,11 @@
-class Paddle
+class Ai
 {
 public:
-    Paddle();
-    void Update();
+    Ai();
+    void Update(int ballX, int ballY);
     void Draw();
 
-protected:
+private:
     int posX;
     int posY;
     int speedX;

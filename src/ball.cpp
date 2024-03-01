@@ -26,3 +26,12 @@ void Ball::Draw()
 {
     DrawCircle(x, y, radius, WHITE);
 }
+
+int Ball::getBallX()
+{
+    return x;
+}
+int Ball::getBallY()
+{
+    return y;
+}
