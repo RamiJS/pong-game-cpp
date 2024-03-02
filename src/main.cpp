@@ -1,7 +1,7 @@
 #include <iostream>
 #include <raylib.h>
 #include "ball.h"
-#include "paddle.h"
+#include "player.h"
 #include "ai.h"
 #include "score.h"
 
@@ -19,7 +19,7 @@ int main()
     // call ball constructor
     Ball ball(scrWidth, scrHeight);
 
-    Paddle paddle;
+    Player player;
 
     Ai ai;
 
@@ -33,7 +33,7 @@ int main()
         DrawText(TextFormat("%i", score.getPlayerScore()), GetScreenWidth() / 4, 20, 42, WHITE);
         DrawText(TextFormat("%i", score.getAiScore()), (GetScreenWidth() / 4) * 3, 20, 42, WHITE);
 
-        if (CheckCollisionCircleRec(Vector2{ball.getBallX(), ball.getBallY()}, ball.getBallRadius(), Rectangle{paddle.getPosX(), paddle.getPosY(), paddle.getWidth(), paddle.getHeight()}))
+        if (CheckCollisionCircleRec(Vector2{ball.getBallX(), ball.getBallY()}, ball.getBallRadius(), Rectangle{player.getPosX(), player.getPosY(), player.getWidth(), player.getHeight()}))
         {
             ball.UpdateSpeedX();
         };
@@ -46,8 +46,8 @@ int main()
         ball.Draw();
         ball.Update();
 
-        paddle.Draw();
-        paddle.Update();
+        player.Draw();
+        player.Update();
 
         ai.Draw();
         ai.Update(ball.getBallX(), ball.getBallY());

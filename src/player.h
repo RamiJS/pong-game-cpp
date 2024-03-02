@@ -1,7 +1,7 @@
-class Paddle
+class Player
 {
 public:
-    Paddle();
+    Player();
     void Update();
     void Draw();
     float getPosX() { return posX; }

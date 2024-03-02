@@ -1,7 +1,7 @@
-#include "paddle.h"
+#include "player.h"
 #include <raylib.h>
 
-Paddle::Paddle()
+Player::Player()
 {
     width = 20;
     height = 60;
@@ -13,17 +13,17 @@ Paddle::Paddle()
     speedY = 10;
 };
 
-void Paddle::Update()
+void Player::Update()
 {
-    if (IsKeyDown(KEY_DOWN) && (posY + height) < GetScreenHeight() - height)
+    if (IsKeyDown(KEY_DOWN) && (posY) < GetScreenHeight() - height)
     {
         posY += speedY;
     }
-    if (IsKeyDown(KEY_UP) && (posY - height) >= 0)
+    if (IsKeyDown(KEY_UP) && posY > 0)
         posY -= speedY;
 };
 
-void Paddle::Draw()
+void Player::Draw()
 {
     DrawRectangle(posX, posY, width, height, RED);
 };
